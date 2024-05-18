@@ -12,16 +12,20 @@ function formatDate(dateString) {
 }
 
 yearDropdown.addEventListener("change", () => {
+    let yearSelected = yearDropdown.value;
+    if (yearDropdown.value === "Pre 2001") {
+        yearSelected = "pre"
+    }
+    container.innerHTML = ""
     fetch("../json/news.json")
         .then(response => response.json())
         .then(data => {
-            for (let year in data[yearDropdown.value]) {
-                let formattedDate = formatDate(data[yearDropdown.value][year].date)
-                console.log(formattedDate)
+            for (let year in data[yearSelected]) {
+                let formattedDate = formatDate(data[yearSelected][year].date)
                 let item = `<div class="newsItem">
                     <div class="newsItemHeadline">
-                    <span>${data[yearDropdown.value][year].headline}</span>
-                    <span>${data[yearDropdown.value][year].date}</span>
+                    <span>${data[yearSelected][year].headline}</span>
+                    <span>${data[yearSelected][year].date}</span>
                     </div>
                     <svg fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
          viewBox="0 0 330 330" xml:space="preserve">
@@ -32,11 +36,12 @@ yearDropdown.addEventListener("change", () => {
     </svg>
                 </div>`
                 container.insertAdjacentHTML("beforeend", item)
-    
+
                 const newsItem = container.lastElementChild;
-    
-                newsItem.addEventListener("click", () => {
+
+                newsItem.addEventListener("click", async() => {
                     // console.log("Release item clicked:", data.releases[release]);
+
                     window.location.href = base + formattedDate + ".pdf";
                 });
             }
