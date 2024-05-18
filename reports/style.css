@@ -1,0 +1,37 @@
+.years{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin: auto;
+    width: 70vw;
+    background-color: rgb(203, 201, 201);
+    border-radius: 40px;
+    color: black;
+    overflow: hidden;
+    gap: 0;
+}
+.year{
+    height: fit-content;
+}
+.year p{
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 20px 0 20px 0;
+    /* border: 1px solid black; */
+}
+.year p:hover{
+    background-color: gray;
+    color: white;
+    /* border-radius: 40px; */
+}
+.quarters{
+    display: none;
+    justify-content: space-evenly;
+}
+.firstQ, .secondQ, .thirdQ, .fourthQ, .annual{
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
