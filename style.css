@@ -45,5 +45,19 @@ nav ul{
 }
 .releases{
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.releaseItem{
+    display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: solid gray;
+    border-width: 0 0 1px 0; */
+    cursor: pointer;
+}
+.releaseItemHeadline{
+    display: flex;
+    flex-direction: column;
 }
