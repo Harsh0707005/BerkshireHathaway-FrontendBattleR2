@@ -73,7 +73,6 @@ section{
 #subsidiaries :nth-child(2){
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
 }
@@ -112,5 +111,29 @@ footer img{
     footer :nth-child(3){
         flex-direction: column;
         gap: 30px;
+    }
+}
+.parent{
+    display: flex; 
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    flex-flow: row nowrap;
+}
+.slider{
+    display: flex;
+    gap: 20px;
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes slide {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
     }
 }
