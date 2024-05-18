@@ -12,6 +12,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px 0 20px;
 }
 nav ul{
     list-style-type: none;
@@ -136,4 +137,9 @@ footer img{
     to{
         transform: translateX(-100%);
     }
+}
+#about p{
+    background-color: rgb(222, 219, 219);
+    padding: 20px;
+    border-radius: 30px;
 }
