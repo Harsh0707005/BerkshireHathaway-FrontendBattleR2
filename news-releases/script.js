@@ -39,7 +39,7 @@ yearDropdown.addEventListener("change", () => {
 
                 const newsItem = container.lastElementChild;
 
-                newsItem.addEventListener("click", async() => {
+                newsItem.addEventListener("click", async () => {
                     // console.log("Release item clicked:", data.releases[release]);
 
                     window.location.href = base + formattedDate + ".pdf";
@@ -51,12 +51,12 @@ yearDropdown.addEventListener("change", () => {
 })
 
 fetch("../json/news.json")
-        .then(response => response.json())
-        .then(data => {
-            let yearSelected = "2024"
-            for (let year in data[yearSelected]) {
-                let formattedDate = formatDate(data[yearSelected][year].date)
-                let item = `<div class="newsItem">
+    .then(response => response.json())
+    .then(data => {
+        let yearSelected = "2024"
+        for (let year in data[yearSelected]) {
+            let formattedDate = formatDate(data[yearSelected][year].date)
+            let item = `<div class="newsItem">
                     <div class="newsItemHeadline">
                     <span>${data[yearSelected][year].headline}</span>
                     <span>${data[yearSelected][year].date}</span>
@@ -69,16 +69,21 @@ fetch("../json/news.json")
         C255,161.018,253.42,157.202,250.606,154.389z"/>
     </svg>
                 </div>`
-                container.insertAdjacentHTML("beforeend", item)
+            container.insertAdjacentHTML("beforeend", item)
 
-                const newsItem = container.lastElementChild;
+            const newsItem = container.lastElementChild;
 
-                newsItem.addEventListener("click", async() => {
-                    // console.log("Release item clicked:", data.releases[release]);
+            newsItem.addEventListener("click", async () => {
+                // console.log("Release item clicked:", data.releases[release]);
 
-                    window.location.href = base + formattedDate + ".pdf";
-                });
-            }
+                window.location.href = base + formattedDate + ".pdf";
+            });
+        }
 
 
-        })
+    })
+
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('show');
+}

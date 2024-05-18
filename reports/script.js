@@ -12,3 +12,8 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('show');
+}

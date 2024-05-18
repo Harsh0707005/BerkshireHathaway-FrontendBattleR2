@@ -25,9 +25,9 @@ fetch("json/content.json")
 
             releaseItem.addEventListener("click", () => {
                 // console.log("Release item clicked:", data.releases[release]);
-                if (data.releases[release].redirect.includes("https")){
+                if (data.releases[release].redirect.includes("https")) {
                     window.location.href = data.releases[release].redirect
-                }else{
+                } else {
                     window.location.href = window.location.href.split('#')[0] + data.releases[release].redirect.replace("/", "");
                 }
                 // console.log(window.location.href)
@@ -81,3 +81,8 @@ fetch("json/content.json")
         }
     }
     )
+
+function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu.classList.toggle('show');
+}
