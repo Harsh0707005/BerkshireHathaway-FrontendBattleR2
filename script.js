@@ -2,7 +2,7 @@ const releases = document.getElementById("releases")
 const specials = document.getElementById("specials")
 const miscs = document.getElementById("miscs")
 
-fetch("content.json")
+fetch("json/content.json")
     .then(response => response.json())
     .then(data => {
         for (let release in data["releases"]) {
@@ -25,7 +25,7 @@ fetch("content.json")
 
             releaseItem.addEventListener("click", () => {
                 console.log("Release item clicked:", data.releases[release]);
-                // window.location.href = data.releases[release].link;
+                window.location.href += data.releases[release].redirect.replace("/", "");
             });
         }
         for (let special in data["specials"]) {
@@ -48,7 +48,7 @@ fetch("content.json")
 
             specialItem.addEventListener("click", () => {
                 console.log("Release item clicked:", data.specials[special]);
-                // window.location.href = data.releases[release].link;
+                window.location.href = data.specials[special].redirect;
             });
         }
         for (let misc in data["misc"]) {
@@ -71,7 +71,7 @@ fetch("content.json")
 
             miscItem.addEventListener("click", () => {
                 console.log("Release item clicked:", data.misc[misc]);
-                // window.location.href = data.releases[release].link;
+                // window.location.href = data.misc[misc].redirect;
             });
         }
     }
