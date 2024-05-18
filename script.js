@@ -74,8 +74,8 @@ fetch("json/content.json")
             const miscItem = miscs.lastElementChild;
 
             miscItem.addEventListener("click", () => {
-                console.log("Release item clicked:", data.misc[misc]);
-                // window.location.href = data.misc[misc].redirect;
+                // console.log("Release item clicked:", data.misc[misc]);
+                window.location.href = data.misc[misc].redirect.replace("/", "");
             });
         }
     }

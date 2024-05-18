@@ -1,3 +1,13 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
 .years{
     display: flex;
     flex-direction: column;
@@ -18,7 +28,8 @@
     cursor: pointer;
     user-select: none;
     padding: 20px 0 20px 0;
-    /* border: 1px solid black; */
+    border: solid gray;
+    border-width: 0 0 1px 0;
 }
 .year p:hover{
     background-color: gray;
@@ -34,4 +45,14 @@
     width: 100%;
     text-align: center;
     padding: 10px;
+}
+#note{
+    text-align: center;
+    color:red;
+}
+#note a:link{
+    color: red;
+}
+#note a:visited{
+    color: purple;
 }
