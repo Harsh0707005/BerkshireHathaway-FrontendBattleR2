@@ -26,10 +26,11 @@ fetch("json/content.json")
             releaseItem.addEventListener("click", () => {
                 // console.log("Release item clicked:", data.releases[release]);
                 if (data.releases[release].redirect.includes("https")){
-                    window.location.href = data.releases[release].redirect
+                    window.location.href.split('#')[0] = data.releases[release].redirect
                 }else{
-                    window.location.href += data.releases[release].redirect.replace("/", "");
+                    window.location.href.split('#')[0] += data.releases[release].redirect.replace("/", "");
                 }
+                console.log(window.location.href)
             });
         }
         for (let special in data["specials"]) {

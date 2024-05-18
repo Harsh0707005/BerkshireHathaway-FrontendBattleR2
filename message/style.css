@@ -3,9 +3,13 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 0 20px 0 20px;
+    margin-bottom: 40px;
 }
 nav ul{
     list-style-type: none;
     display: flex;
     gap: 20px;
+}
+pre{
+    text-align: center;
 }
