@@ -1,3 +1,14 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
 #container{
     display: flex;
     flex-direction: column;
@@ -15,4 +26,13 @@
 .newsItemHeadline{
     display: flex;
     flex-direction: column;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70vw;
+    margin: auto;
+    gap: 40px;
+    margin-top: 50px;
 }
