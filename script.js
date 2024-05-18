@@ -24,8 +24,12 @@ fetch("json/content.json")
             const releaseItem = releases.lastElementChild;
 
             releaseItem.addEventListener("click", () => {
-                console.log("Release item clicked:", data.releases[release]);
-                window.location.href += data.releases[release].redirect.replace("/", "");
+                // console.log("Release item clicked:", data.releases[release]);
+                if (data.releases[release].redirect.includes("https")){
+                    window.location.href = data.releases[release].redirect
+                }else{
+                    window.location.href += data.releases[release].redirect.replace("/", "");
+                }
             });
         }
         for (let special in data["specials"]) {
