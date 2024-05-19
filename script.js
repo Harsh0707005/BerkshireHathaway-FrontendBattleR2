@@ -92,7 +92,7 @@ fetch("json/content.json")
 
             specialItem.addEventListener("click", () => {
                 console.log("Release item clicked:", data.specials[special]);
-                window.location.href = data.specials[special].redirect;
+                window.location.href = window.location.href.split('#')[0] + data.specials[special].redirect.replace("/", "");
             });
         }
         for (let misc in data["misc"]) {
@@ -136,7 +136,7 @@ fetch("json/content.json")
 
             miscItem.addEventListener("click", () => {
                 // console.log("Release item clicked:", data.misc[misc]);
-                window.location.href = data.misc[misc].redirect.replace("/", "");
+                window.location.href = window.location.href.split('#')[0] + data.misc[misc].redirect.replace("/", "");
             });
         }
     }
