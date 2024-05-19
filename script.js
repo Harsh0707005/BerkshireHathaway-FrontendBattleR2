@@ -91,9 +91,9 @@ fetch("json/content.json")
             const specialItem = specials.lastElementChild;
 
             specialItem.addEventListener("click", () => {
-                console.log("Release item clicked:", data.specials[special]);
-                // window.location.href = window.location.href.split('#')[0] + data.specials[special].redirect.replace("/", "");
-                console.log(window.location.href.split('#')[0], data.specials[special].redirect.replace("/", ""))
+                // console.log("Release item clicked:", data.specials[special]);
+                window.location.href = window.location.href.split('#')[0] + data.specials[special].redirect.replace("/", "");
+                // console.log(window.location.href.split('#')[0], data.specials[special].redirect.replace("/", ""))
             });
         }
         for (let misc in data["misc"]) {
