@@ -1,0 +1,75 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        background: white;
+        padding: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+}
+
+#warrenImg{
+    border-radius: 50%;
+}
+#charlieImg{
+    border-radius: 50%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+}
+#warren, #charlie{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.pdfPopup{
+    color: red;
+}
+@media only screen and (max-width: 500px) {
+    #charlie, #warren{
+        flex-direction: column;
+    }
+}
