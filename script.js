@@ -67,7 +67,7 @@ fetch("json/content.json")
 </svg>
             </div>`
 
-            if (data.specials[special].redirect === "/lettersPPF" || data.specials[special].redirect === "/lettersBS" || data.specials[special].redirect === "/lettersWS" || data.specials[special].redirect === "/lettersGiftBS") {
+            if (data.specials[special].redirect === "/lettersBS" || data.specials[special].redirect === "/lettersWS" || data.specials[special].redirect === "/lettersGiftBS") {
                 item = `<div class="releaseItem">
                 <div class="releaseItemHeadline">
                 <span>${data["specials"][special].headline}</span>
