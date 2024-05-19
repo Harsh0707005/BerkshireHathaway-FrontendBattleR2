@@ -1,5 +1,13 @@
 const yearDropdown = document.getElementById("yearDropdown")
 const container = document.getElementById("container")
+const pdfPopup = document.getElementById("pdfPopup")
+const closesym = document.getElementById("closesym")
+const expectedPdf = document.getElementById("expectedPdf")
+
+
+closesym.addEventListener("click", () => {
+    pdfPopup.style.display = "none"
+})
 
 var base = "https://www.berkshirehathaway.com/news/"
 
@@ -42,7 +50,9 @@ yearDropdown.addEventListener("change", () => {
                 newsItem.addEventListener("click", async () => {
                     // console.log("Release item clicked:", data.releases[release]);
 
-                    window.location.href = base + formattedDate + ".pdf";
+                    // window.location.href = base + formattedDate + ".pdf";
+                    
+                    pdfPopup.style.display = "flex"
                 });
             }
 
@@ -76,7 +86,11 @@ fetch("../json/news.json")
             newsItem.addEventListener("click", async () => {
                 // console.log("Release item clicked:", data.releases[release]);
 
-                window.location.href = base + formattedDate + ".pdf";
+                // window.location.href = base + formattedDate + ".pdf";
+                pdfPopup.style.display = "flex"
+                expectedPdf.href = base + formattedDate + ".pdf";
+                expectedPdf.innerHTML = base + formattedDate + ".pdf";
+
             });
         }
 
