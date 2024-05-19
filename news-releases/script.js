@@ -51,8 +51,10 @@ yearDropdown.addEventListener("change", () => {
                     // console.log("Release item clicked:", data.releases[release]);
 
                     // window.location.href = base + formattedDate + ".pdf";
-                    
+
                     pdfPopup.style.display = "flex"
+                    expectedPdf.href = base + formattedDate + ".pdf";
+                    expectedPdf.innerHTML = base + formattedDate + ".pdf";
                 });
             }
 
